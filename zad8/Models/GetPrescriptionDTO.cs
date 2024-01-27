@@ -2,9 +2,9 @@
 
 public class GetPrescriptionDTO
 {
-    public Patient Patient { get; set; }
+    public PatientDTO Patient { get; set; }
 
-    public IEnumerable<Medicament> Medicaments { get; set; }
+    public IEnumerable<MedicamentDTO> Medicaments { get; set; }
     
     public int IdPrescription { get; set; }
     
@@ -16,7 +16,7 @@ public class GetPrescriptionDTO
     
 }
 
-public class Patient
+public class PatientDTO
 {
     public int IdPatient { get; set; }
     
@@ -28,7 +28,7 @@ public class Patient
     
 }
 
-public class Medicament
+public class MedicamentDTO
 {
     public int IdMedicament { get; set; }
     
@@ -38,7 +38,7 @@ public class Medicament
     
     public string Type { get; set; } = null!;
     
-    public int Dose { get; set; }
+    public int? Dose { get; set; }
     
     public string Details { get; set; } = null!;
     
