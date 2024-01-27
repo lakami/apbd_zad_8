@@ -13,6 +13,7 @@ public class DatabaseContext : DbContext
     {
     }
     
-    public virtual DbSet<Doctor> Doctors { get; set; }
+    //umożliwienie pracy na tablicy Doctors
+    public virtual DbSet<Doctor> Doctor { get; set; }
     
 }

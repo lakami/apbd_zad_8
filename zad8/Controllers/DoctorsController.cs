@@ -1,7 +1,7 @@
 
 using Microsoft.AspNetCore.Mvc;
-
 using zad8.Models;
+using zad8.Repo;
 
 namespace zad8.Controllers;
 
@@ -11,14 +11,12 @@ public class DoctorsController : ControllerBase
 {
    
     private readonly ILogger<DoctorsController> _logger;
-    // private readonly DatabaseContext _context;
+    private readonly DatabaseContext _context;
 
-    public DoctorsController(ILogger<DoctorsController> logger
-        // , DatabaseContext context
-        )
+    public DoctorsController(ILogger<DoctorsController> logger, DatabaseContext context)
     {
         _logger = logger;
-        // _context = context;
+        _context = context;
     }
 
     [HttpGet]
