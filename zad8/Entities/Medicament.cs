@@ -18,4 +18,7 @@ public class Medicament
     [Required]
     [MaxLength(100)]
     public string Type { get; set; } = null!;
+    
+    public virtual ICollection<Prescription_Medicament> Prescription_Medicaments { get; set; } = new List<Prescription_Medicament>();
+
 }
