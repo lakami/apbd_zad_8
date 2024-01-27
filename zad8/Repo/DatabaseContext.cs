@@ -22,4 +22,8 @@ public class DatabaseContext : DbContext
     //umożliwienie pracy na tablicy Medicament
     public virtual DbSet<Medicament> Medicament { get; set; }
     
+    //umożliwienie pracy na tablicy Prescription
+    public virtual DbSet<Prescription> Prescription { get; set; }
+    
+    
 }

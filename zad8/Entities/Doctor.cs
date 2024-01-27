@@ -20,6 +20,6 @@ public class Doctor
     [MaxLength(100)]
     public string Email { get; set; } = null!;
 
-    // public virtual ICollection<Prescription> Prescriptions { get; set; } = new List<Prescription>();
+    public virtual ICollection<Prescription> Prescriptions { get; set; } = new List<Prescription>();
 
 }
