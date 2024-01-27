@@ -16,4 +16,7 @@ public class DatabaseContext : DbContext
     //umożliwienie pracy na tablicy Doctors
     public virtual DbSet<Doctor> Doctor { get; set; }
     
+    //umożliwienie pracy na tablicy Patient
+    public virtual DbSet<Patient> Patient { get; set; }
+    
 }
