@@ -133,6 +133,29 @@ namespace zad8.Migrations
                     b.ToTable("Prescription");
                 });
 
+            modelBuilder.Entity("zad8.Prescription_Medicament", b =>
+                {
+                    b.Property<int>("IdMedicament")
+                        .HasColumnType("int");
+
+                    b.Property<int>("IdPrescription")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Details")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<int?>("Dose")
+                        .HasColumnType("int");
+
+                    b.HasKey("IdMedicament", "IdPrescription");
+
+                    b.HasIndex("IdPrescription");
+
+                    b.ToTable("Prescription_Medicament");
+                });
+
             modelBuilder.Entity("zad8.Prescription", b =>
                 {
                     b.HasOne("zad8.Doctor", "Doctor")
@@ -150,6 +173,25 @@ namespace zad8.Migrations
                     b.Navigation("Doctor");
 
                     b.Navigation("Patient");
+                });
+
+            modelBuilder.Entity("zad8.Prescription_Medicament", b =>
+                {
+                    b.HasOne("zad8.Medicament", "Medicament")
+                        .WithMany()
+                        .HasForeignKey("IdMedicament")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("zad8.Prescription", "Prescription")
+                        .WithMany()
+                        .HasForeignKey("IdPrescription")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Medicament");
+
+                    b.Navigation("Prescription");
                 });
 
             modelBuilder.Entity("zad8.Doctor", b =>
