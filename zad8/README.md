@@ -83,7 +83,7 @@ Uwaga: jeżeli encje mają pole typu DateOnly, to nie zadziała, lepiej je zamie
 
 Jeżeli migracja ma błędy i chcemy ją cofnąć, to odpalamy:
 
-dotnet ef migrations remove`
+`dotnet ef migrations remove`
 
 Dodatkowe informacje można uzyskać tutaj:
 
